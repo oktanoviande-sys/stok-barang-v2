@@ -21,7 +21,7 @@ class MainActivity:Activity(){
  }
  fun edit(old:Item?){val box=LinearLayout(this);box.orientation=LinearLayout.VERTICAL
   fun e(h:String,v:String=""):EditText=EditText(this).apply{hint=h;setText(v)}
-  val n=e("Nama barang",old?.name?:""),c=e("Kategori",old?.cat?:""),co=e("Warna",old?.color?:""),s=e("Ukuran",old?.size?:"")
+  val n=e("Nama barang",old?.name?:""); val c=e("Kategori",old?.cat?:""); val co=e("Warna",old?.color?:""); val s=e("Ukuran",old?.size?:"")
   val m=e("Harga modal",old?.modal?.toString()?:"");m.inputType=2
   val j=e("Harga jual",old?.sell?.toString()?:"");j.inputType=2
   val q=e("Stok",old?.stock?.toString()?:"");q.inputType=2
