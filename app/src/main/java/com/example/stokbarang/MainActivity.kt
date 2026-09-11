@@ -36,7 +36,7 @@ class MainActivity:Activity(){
   AlertDialog.Builder(this).setTitle(if(d>0)"Stok Masuk" else "Penjualan").setView(e).setNegativeButton("Batal",null).setPositiveButton("Simpan"){_,_->
    val q=e.text.toString().toIntOrNull()?:0;if(q<=0)return@setPositiveButton
    if(d<0&&q>x.stock){Toast.makeText(this,"Stok tidak cukup",Toast.LENGTH_SHORT).show();return@setPositiveButton}
-   x.stock+=d*q;tx.add(Tx(x.name,if(d>0)"MASUK" else "JUAL",q,if(d>0)x.modal*q:x.sell*q,System.currentTimeMillis()));save();refresh()
+   x.stock+=d*q;tx.add(Tx(x.name,if(d>0)"MASUK" else "JUAL",q,if(d>0) x.modal*q else x.sell*q,System.currentTimeMillis()));save();refresh()
   }.show()
  }
  fun del(x:Item){AlertDialog.Builder(this).setTitle("Hapus barang?").setMessage(x.name).setNegativeButton("Batal",null).setPositiveButton("Hapus"){_,_->items.remove(x);save();refresh()}.show()}
